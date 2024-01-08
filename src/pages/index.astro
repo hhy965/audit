@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+import News from "../components/News.astro";
+import Slideshow from "../components/Slideshow.vue";
+---
+
+<Layout title="山东省教育审计学会">
+  <Header />
+  <Nav />
+  <main class="mt-10 mx-72">
+    <div class="grid grid-cols-3 gap-4">
+    <Slideshow client:load class="col-span-2 row-span-2"/>
+    <News />
+    <News />
+    <News />
+    <News />
+    <News />
+    </div>
+  </main>
+</Layout>
+
+<style></style>
