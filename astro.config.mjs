@@ -8,5 +8,8 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   integrations: [tailwind(), vue()],
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
+  server: {
+    host: '0.0.0.0'
+  }
 });

@@ -2,23 +2,67 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
-import News from "../components/News.astro";
-import Slideshow from "../components/Slideshow.vue";
+import DynamicNews from "../components/DynamicNews.vue";
+import Search from "../components/Search.astro";
+import Plate from "../components/Plate.astro";
+import FriendLink from "../components/FriendLink.astro";
+import Footer from "../components/Footer.astro";
+
+const list = [
+  { content: "2014年全省教育审计工作座谈会在济南召开", date: "2024-01-24" },
+  { content: "2014年审计人员继续教育东营培训班开班", date: "2024-01-24" },
+  {
+    content: "刘家义强调：领导干部要做尊法学法守法用法的表率",
+    date: "2024-01-24",
+  },
+  {
+    content:
+      "刘家义在审计署党组派驻纪检组长述职会议上强调：忠诚履职尽责干净无私担当",
+    date: "2024-01-24",
+  },
+  { content: "全省2014年度教育审计先进集体、个人受到表彰", date: "2024-01-24" },
+  {
+    content: "山东省教育审计学会四届三次常务理事会在济南召开",
+    date: "2024-01-24",
+  },
+  {
+    content:
+      "审计署关于印发培养审计业务骨干人才和审计专业领军人才实施意见的通知",
+    date: "2024-01-24",
+  },
+  { content: "学会第五届会员代表大会在济南召开", date: "2024-01-24" },
+  { content: "学会换届会议综述", date: "2024-01-24" },
+];
+
+const friendLinks = [
+  {name: "教育部", url: ""},
+  {name: "财政部", url: ""},
+  {name: "审计署", url: ""},
+  {name: "民政部", url: ""},
+  {name: "教育厅", url: ""},
+  {name: "财政厅", url: ""},
+  {name: "审计厅", url: ""},
+  {name: "民政厅", url: ""},
+  {name: "中国内审学会", url: ""},
+  {name: "山东内审学会", url: ""},
+]
 ---
 
 <Layout title="山东省教育审计学会">
   <Header />
   <Nav />
-  <main class="mt-10 mx-72">
-    <div class="grid grid-cols-3 gap-4">
-    <Slideshow client:load class="col-span-2 row-span-2"/>
-    <News />
-    <News />
-    <News />
-    <News />
-    <News />
+  <Search />
+  <main class="mt-6 mx-80 max-phone:m-0">
+    <DynamicNews client:load class="col-span-3 row-span-2" /><br />
+    <div class="grid grid-cols-2 gap-4 max-phone:grid-cols-1">
+      <Plate title="通知公告" list={list} />
+      <Plate title="法规制度" list={list} />
+      <Plate title="工作动态" list={list} />
+      <Plate title="相关下载" list={list} />
     </div>
+    <FriendLink friendLinks={friendLinks} />
   </main>
+  <Footer />
 </Layout>
 
 <style></style>

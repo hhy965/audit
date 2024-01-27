@@ -1,14 +1,165 @@
+<script>
+  const navButton = document.querySelector(".nav-button");
+  const navContent = document.querySelector(".nav-content");
+  navButton?.addEventListener("click", function () {
+    navContent?.classList.toggle("hidden");
+  });
+</script>
+
 <nav>
-  <ul class="flex justify-center items-center gap-28 h-14 bg-cyan-700 text-white text-base">
-    <li class="h-full flex items-center border-b-2 hover:border-b-2 border-gray-100"><a href="">首页</a></li>
-    <li class="h-full flex items-center hover:border-b-2 border-gray-100"><a href="">政策解读</a></li>
-    <li class="h-full flex items-center hover:border-b-2 border-gray-100"><a href="">上级文件</a></li>
-    <li class="h-full flex items-center hover:border-b-2 border-gray-100"><a href="">会员单位动态</a></li>
-    <li class="h-full flex items-center hover:border-b-2 border-gray-100"><a href="">学会工作</a></li>
-    <li class="h-full flex items-center hover:border-b-2 border-gray-100"><a href="">审计科研</a></li>
-    <li class="h-full flex items-center hover:border-b-2 border-gray-100"><a href="">审计亮点</a></li>
-    <li class="h-full flex items-center hover:border-b-2 border-gray-100"><a href="">审计人员经验交流</a></li>
+  <ul
+    class="flex justify-center items-center gap-4 h-14 bg-cyan-700 text-white text-base max-phone:hidden"
+  >
+    <li
+      class="h-full flex items-center justify-center border-b-2 border-gray-100 bg-teal-600 w-36"
+    >
+      <a href="">首页</a>
+    </li>
+    <li
+      class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 w-36"
+    >
+      <a href="">法规制度</a>
+    </li>
+    <li
+      class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+    >
+      <a href="">工作动态</a>
+    </li>
+    <li
+      class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+    >
+      <a href="">相关下载</a>
+    </li>
+    <li
+      class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+    >
+      <a href="">学术交流</a>
+    </li>
+    <li
+      class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+    >
+      <a href="">新闻资讯</a>
+    </li>
+    <li
+      class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+    >
+      <a href="">通知公告</a>
+    </li>
+    <li
+      class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+    >
+      <a href="">学习园地</a>
+    </li>
+    <li
+      class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36 relative group"
+    >
+      <a href="">关于我们</a>
+      <div class="absolute hidden group-hover:block shadow-md top-full">
+        <ul
+          class="flex flex-col justify-center items-center gap-2 h-14 bg-cyan-700 text-white text-base h-40"
+        >
+          <li
+            class="h-full flex items-center justify-center border-gray-100 w-36 hover:bg-teal-600"
+          >
+            <a href="">学会简介</a>
+          </li>
+          <li
+            class="h-full flex items-center justify-center border-gray-100 w-36 hover:bg-teal-600"
+          >
+            <a href="">学会简章</a>
+          </li>
+          <li
+            class="h-full flex items-center justify-center border-gray-100 w-36 hover:bg-teal-600"
+          >
+            <a href="">学会机构</a>
+          </li>
+          <li
+            class="h-full flex items-center justify-center border-gray-100 w-36 hover:bg-teal-600"
+          >
+            <a href="">学会会员条目</a>
+          </li>
+        </ul>
+      </div>
+    </li>
   </ul>
+
+  <!-- 移动端适配，左上角导航开关 -->
+  <div class="hidden max-phone:block absolute top-2 light-2">
+    <button class="nav-button flex items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-layout-panel-top"
+        ><rect width="18" height="7" x="3" y="3" rx="1"></rect><rect
+          width="7"
+          height="7"
+          x="3"
+          y="14"
+          rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"
+        ></rect></svg
+      >导航栏
+    </button>
+  </div>
+  <!-- 移动端适配，侧窗内容 -->
+  <div
+    class="nav-content absolute hidden top-0 left-0 mt-12 rounded shadow-md z-10 w-5/12 h-3/6"
+  >
+    <ul
+      class="flex flex-col justify-center items-center h-14 bg-cyan-700 text-white text-base h-full"
+    >
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 w-36"
+      >
+        <a href="">首页</a>
+      </li>
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 w-36"
+      >
+        <a href="">法规制度</a>
+      </li>
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+      >
+        <a href="">工作动态</a>
+      </li>
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+      >
+        <a href="">相关下载</a>
+      </li>
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+      >
+        <a href="">学术交流</a>
+      </li>
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+      >
+        <a href="">新闻资讯</a>
+      </li>
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+      >
+        <a href="">通知公告</a>
+      </li>
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36"
+      >
+        <a href="">学习园地</a>
+      </li>
+      <li
+        class="h-full flex items-center justify-center hover:border-b-2 hover:bg-teal-600 border-gray-100 w-36 relative group"
+      >
+        <a href="">关于我们</a>
+      </li>
+    </ul>
+  </div>
 </nav>
-<style>
-</style>
+<style></style>

@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  list: {
+    content: string;
+    date: string;
+  }[];
+}
+
+const { title, list } = Astro.props;
+---
+
+<div>
+  <h2
+    class="font-medium text-xl text-sky-700 py-2 px-4 bg-stone-300 rounded-t-lg w-fit"
+  >
+    {title}
+  </h2>
+  <div class="border-t-2 border-gray-400">
+    <ul class="px-8 py-2 list-disc space-y-1.5">
+      {
+        list.map((item) => (
+          <li class="hover:text-emerald-600">
+            <a href="" class="flex justify-between">
+              <div class="whitespace-nowrap overflow-hidden overflow-ellipsis w-9/12">
+                {item.content}
+              </div>
+              <div>[{item.date}]</div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

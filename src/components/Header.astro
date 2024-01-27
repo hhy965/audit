@@ -1,31 +1,99 @@
-<header class="header bg-gradient-to-r from-cyan-200 from-blue-300">
-<div class="flex justify-between items-center mx-40 py-10">
-  <div class="header-left">
-    <h1 class="name text-4xl font-black">山东教育审计学会</h1>
-    <p class="text-base font-meidum text-slate-600">ShanDong Educational Audit Society</p>
+<script>
+  const moreButton = document.querySelector(".more-button");
+  const moreContent = document.querySelector(".more-content");
+  moreButton?.addEventListener("click", function () {
+    moreContent?.classList.toggle("hidden");
+  });
+</script>
+
+<header class="header max-phone:h-40 relative">
+  <div class="flex justify-between items-center mx-40 py-10 max-phone:mx-0">
+    <div class="header-left w-3/12 max-phone:w-9/12 max-phone:mx-auto">
+      <h1 class="name text-4xl font-black max-phone:text-2xl">山东教育审计学会</h1>
+      <p class="text-base font-meidum text-slate-300">
+        ShanDong Educational Audit Society
+      </p>
+    </div>
+    <div class="header-right max-phone:hidden">
+      <ul class="flex gap-6">
+        <li class="border-b-4 border-indigo-700"><a href="/">首页</a></li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about" target="_blank">财政部</a>
+        </li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about">审计署</a>
+        </li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about">审计厅</a>
+        </li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about">教育厅</a>
+        </li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about">中国教育审计学会</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 移动端适配，右上角Header开关 -->
+    <div class="hidden max-phone:block absolute top-2 right-2">
+      <button class="more-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-menu"
+          ><line x1="4" x2="20" y1="12" y2="12"></line><line
+            x1="4"
+            x2="20"
+            y1="6"
+            y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg
+        >
+      </button>
+    </div>
+    <!-- 移动端适配，侧窗内容 -->
+    <div
+      class="more-content absolute hidden top-0 right-0 mt-12 bg-white p-4 rounded shadow-md z-10"
+    >
+      <ul class="flex flex-col gap-6">
+        <li class="border-b-4 border-indigo-700"><a href="/">首页</a></li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about" target="_blank">财政部</a>
+        </li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about">审计署</a>
+        </li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about">审计厅</a>
+        </li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about">教育厅</a>
+        </li>
+        <li class="hover:border-b-4 border-indigo-600">
+          <a href="/about">中国教育审计学会</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="header-right">
-    <ul class="flex gap-6">
-      <li class="border-b-4 border-indigo-500"><a href="/">首页</a></li>
-      <li class="hover:border-b-4 border-indigo-300"><a href="/about"  target="_blank">财政部</a></li>
-      <li class="hover:border-b-4 border-indigo-300"><a href="/about">审计署</a></li>
-      <li class="hover:border-b-4 border-indigo-300"><a href="/about">审计厅</a></li>
-      <li class="hover:border-b-4 border-indigo-300"><a href="/about">教育厅</a></li>
-      <li class="hover:border-b-4 border-indigo-300"><a href="/about">中国教育审计学会</a></li>
-    </ul>
-  </div>
-</div>
 </header>
 
 <style>
   .header {
-    background-color: ;
+    background-image: url("public/1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .header .header-left {
-    width: 24%;
     text-align-last: justify;
   }
   .header .header-left .name {
-    color: #B70000;
+    color: rgb(185 28 28);
   }
 </style>
