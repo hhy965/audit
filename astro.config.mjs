@@ -10,5 +10,6 @@ export default defineConfig({
   output: "server",
   adapter: netlify(),
   server: {
+    host: '0.0.0.0'
   }
 });

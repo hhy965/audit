@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
       screens: {
-        'phone': '400px'
+        'phone': '500px'
       },
       width: {
         'img-max': '840px'
